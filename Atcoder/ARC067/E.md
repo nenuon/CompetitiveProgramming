@@ -4,13 +4,18 @@ __dp[i][j] = i人未満のグループのみで、j人を分ける通り数__と
 このようにdpを定義すると、dpの更新式は以下のようになる。
 
 i人のグループを一個も作らないとき、
-$dp[i+1][j] += dp[i][j]$
+
+<img src="https://latex.codecogs.com/gif.latex?$dp[i&plus;1][j]&space;&plus;=&space;dp[i][j]$" />
+
 残りのN-j人のうち、i人のグループをk個作るとき、
-$dp[i+1][j+i*k] += dp[i][j] \times _{N-j}C_i \times _{N-j-i}C_i \times ... _{N-j-(k-1)*i}C_i / k!$
+
+<img src="https://latex.codecogs.com/gif.latex?$dp[i&plus;1][j&plus;i*k]&space;&plus;=&space;dp[i][j]&space;\times&space;_{N-j}C_i&space;\times&space;_{N-j-i}C_i&space;\times&space;...&space;_{N-j-(k-1)*i}C_i&space;/&space;k!$" />
 
 $k!$で割るのはグループを区別しないため重複があるので。
 
-計算量は$O(N^3)$のように思われるが、$0 \leq k \leq \frac{N-j}{i}$なので、$O(N^2logN)$らしい...
+計算量はO(N^3)のように思われるが、
+<img src="https://latex.codecogs.com/gif.latex?$0&space;\leq&space;k&space;\leq&space;\frac{N-j}{i}$" />
+なので、O(N^2logN)らしい...
 
 また1000000007で割った余りを答えるので割り算をするときはフェルマーの小定理を使う必要あり。
 
