@@ -14,7 +14,7 @@ i人のグループを一個も作らないとき、
 $k!$で割るのはグループを区別しないため重複があるので。
 
 計算量はO(N^3)のように思われるが、
-<img src="https://latex.codecogs.com/gif.latex?$0&space;\leq&space;k&space;\leq&space;\frac{N-j}{i}$" />
+<img src="https://latex.codecogs.com/gif.latex?$0&space;\leq&space;k&space;\leq&space;(N-j)/i$" />
 なので、O(N^2logN)らしい...
 
 また1000000007で割った余りを答えるので割り算をするときはフェルマーの小定理を使う必要あり。
